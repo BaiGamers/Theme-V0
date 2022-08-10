@@ -20,14 +20,14 @@ then
     read -p "=> " title
     echo "clear" > null.txt
     echo "figlet -f ASCII-Shadow.flf ${title} | lolcat" > banner.txt
-    echo "echo '+=======================================+'" > garis.txt
-    echo "echo '           Welcome To Termux'" > wlc.txt
+    echo "sh login-menu.sh" > menu.txt
+
     rm -d ../usr/etc/bash.bashrc
     cp bash.bashrc ../usr/etc
     cat "null.txt" >> ../usr/etc/bash.bashrc
     cat "banner.txt" >> ../usr/etc/bash.bashrc
-    cat "garis.txt" >> ../usr/etc/bash.bashrc
-    cat "wlc.txt" >> ../usr/etc/bash.bashrc
+    cat "menu.txt" >> ../usr/etc/bash.bashrc
+
     cat "garis.txt" >> ../usr/etc/bash.bashrc
     echo
     echo "[+] Loading..."
